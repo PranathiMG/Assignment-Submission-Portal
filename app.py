@@ -11,10 +11,10 @@ os.makedirs(UPLOAD_FOLDER, exist_ok=True)
 
 # ---------------- MySQL Connection ----------------
 conn = mysql.connector.connect(
-    host="localhost",
-    user="root",
-    password="Pranathi@14",  # change this
-    database="assignment_portal"
+   DB_HOST = "localhost"
+   DB_USER = "root"
+   DB_PASSWORD = "your_mysql_password"
+   DB_NAME = "assignment_portal"
 )
 cursor = conn.cursor(dictionary=True)
 
