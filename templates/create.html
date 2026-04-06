@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Create Assignment</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(to right, #4e73df, #1cc88a);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .container {
+            background: white;
+            padding: 30px;
+            width: 400px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 15px rgba(0,0,0,0.2);
+        }
+
+        h2 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        input, textarea {
+            width: 100%;
+            padding: 10px;
+            margin-top: 8px;
+            margin-bottom: 15px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+
+        button {
+            width: 100%;
+            padding: 10px;
+            background: #4e73df;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background: #2e59d9;
+        }
+
+        .back {
+            text-align: center;
+            margin-top: 10px;
+        }
+
+        .back a {
+            text-decoration: none;
+            color: #4e73df;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h2>Create Assignment</h2>
+
+    <form method="POST" action="/create_task">
+        <input type="text" name="title" placeholder="Assignment Title" required>
+        <textarea name="description" placeholder="Assignment Description" required></textarea>
+        <input type="date" name="deadline" required>
+        <button type="submit">Create Assignment</button>
+    </form>
+
+
+    <div class="back">
+        <a href="/admin">Back To Dasboard</a>
+    </div>
+</div>
+
+</body>
+</html>
