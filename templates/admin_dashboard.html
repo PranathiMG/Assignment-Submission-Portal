@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Admin Dashboard</title>
+    <style>
+        body {
+            background: linear-gradient(to right, #4facfe, #00f2fe);
+            font-family: Arial;
+            text-align: center;
+        }
+
+        h2 {
+            color: white;
+            margin-top: 30px;
+        }
+
+        table {
+            margin: 30px auto;
+            border-collapse: collapse;
+            width: 80%;
+            background: white;
+        }
+
+        th {
+            background: #007BFF;
+            color: white;
+            padding: 10px;
+        }
+
+        td {
+            padding: 10px;
+            border-bottom: 1px solid #ddd;
+        }
+
+        a {
+            padding: 6px 10px;
+            text-decoration: none;
+            border-radius: 5px;
+            color: white;
+            font-size: 14px;
+        }
+
+        .view { background: #28a745; }
+        .download { background: #17a2b8; }
+        .delete { background: #dc3545; }
+    </style>
+</head>
+<body>
+
+<h2>Admin Dashboard</h2>
+<a href="/create">
+    <button style="padding:10px 15px; background:green; color:white; border:none;">
+        Create Assignment
+    </button>
+</a>
+<table>
+    <tr>
+        <th>Filename</th>
+        <th>Actions</th>
+    </tr>
+
+    {% for file in files %}
+    <tr>
+        <td>{{ file }}</td>
+        <td>
+            
+            <a class="download" href="{{ url_for('download_file', filename=file) }}">Download</a>
+            
+    </tr>
+    {% endfor %}
+</table>
+
+
+<br><br>
+
+
+</body>
+</html>
